@@ -22,7 +22,7 @@ mux m0(
 );
 
 pc pc0(
-  .clk(clk)
+  .clk(clk),
   .pc(pc_mux),
   .pc_next(pc_out)
 );
