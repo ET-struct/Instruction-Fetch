@@ -1,3 +1,4 @@
+`timescale 1ns / 1ps
 module fetch(
 input wire clk,
 rst,
