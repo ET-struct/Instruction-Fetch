@@ -5,7 +5,7 @@ module pc(
     input [31:0] pc,
     output [31:0] pc_next
     );
-    reg [31:0] tmp;
+    reg [31:0] tmp = 0;
     always@(posedge clk)
     begin
     tmp <= pc;
