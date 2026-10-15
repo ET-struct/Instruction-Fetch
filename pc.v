@@ -2,6 +2,7 @@
 
 module pc(
     input clk,
+    input rst,
     input [31:0] pc,
     output [31:0] pc_next
     );
