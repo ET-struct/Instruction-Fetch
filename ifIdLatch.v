@@ -39,6 +39,7 @@ module ifIdLatch(
         pcout<=pc_in;
         instrout <= instr_in;
     end
+    end
     assign pc_out=pcout;
     assign instr_out = instrout;
 endmodule
