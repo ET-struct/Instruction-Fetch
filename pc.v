@@ -6,9 +6,12 @@ module pc(
     output [31:0] pc_next
     );
     reg [31:0] tmp = 0;
-    always@(posedge clk)
-    begin
+    always@(posedge clk)begin
+         if(rst)begin
+        tmp<=32'b0;
+    end else begin
     tmp <= pc;
+    end
     end
     assign pc_next = tmp;
 endmodule
