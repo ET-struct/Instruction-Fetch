@@ -32,6 +32,10 @@ module ifIdLatch(
     reg [31:0] instrout;
     // The latch passes the data through on the clock cycle
     always @(posedge clk) begin
+        if(rst) begin
+        pcout <= 32'b0;
+        instrout <= 32'b0;
+    end else begin
         pcout<=pc_in;
         instrout <= instr_in;
     end
