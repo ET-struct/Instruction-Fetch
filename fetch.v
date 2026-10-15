@@ -22,7 +22,8 @@ mux m0(
 );
 
 pc pc0(
-  .clk(clk)
+  .clk(clk),
+  .rst(rst),
   .pc(pc_mux),
   .pc_next(pc_out)
 );
@@ -34,6 +35,7 @@ incrementer in0(
 
 instrMem inMem0(
   .clk(clk),
+  .rst(rst),
   .rst(rst),
   .addr(pc_out),
   .data(instr_data)
