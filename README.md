@@ -89,6 +89,10 @@ Expected output:
 ├── README.md
 ├── images/
 │   ├── fetchWaveform.png
+│   ├── IF_ID_Instr_tb.png
+│   ├── IF_ID_instr_tb2.png
+│   ├── IF_ID_npc_tb1.png
+│   └── IF_ID_npc_tb2.png
 ├── fetch.v
 ├── fetch_tb.v
 ├── ifIdLatch.v
