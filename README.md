@@ -20,13 +20,13 @@ The Instruction Fetch stage uses the Program Counter (PC) to address the Instruc
 ### Source Code
 | File | Description |
 |---|---|
-| [`fetch.v`](https://github.com/ET-struct/MIPS_Pipeline/blob/Instruction_Fetch/fetch.v) | Final IF Stage module instntiating and connecting all 5 components. |
-| [`mux.v`](https://github.com/ET-struct/MIPS_Pipeline/blob/Instruction_Fetch/mux.v) | Multiplexer to select between standard PC increment and EX_MEM target. |
-| [`pc.v`](https://github.com/ET-struct/MIPS_Pipeline/blob/Instruction_Fetch/pc.v) | Program Counter register module with synchronous reset. |
-| [`incrementer.v`](https://github.com/ET-struct/MIPS_Pipeline/blob/Instruction_Fetch/incrementer.v) | Adder module to increment the PC. |
-| [`instrMem.v`](https://github.com/ET-struct/MIPS_Pipeline/blob/Instruction_Fetch/instrMem.v) | Instruction Memory module pre-loaded with dummy hex values. |
-| [`ifIdLatch.v`](https://github.com/ET-struct/MIPS_Pipeline/blob/Instruction_Fetch/ifIdLatch.v) | Pipeline latch passing PC and instruction on the clock edge. |
-| [`fetch_tb.v`](https://github.com/ET-struct/MIPS_Pipeline/blob/Instruction_Fetch/fetch_tb.v) | Verification testbench providing clock, reset, and EX_MEM inputs. |
+| [`fetch.v`](https://github.com/ET-struct/MIPS_Pipeline/blob/main/fetch.v) | Final IF Stage module instntiating and connecting all 5 components. |
+| [`mux.v`](https://github.com/ET-struct/MIPS_Pipeline/blob/main/mux.v) | Multiplexer to select between standard PC increment and EX_MEM target. |
+| [`pc.v`](https://github.com/ET-struct/MIPS_Pipeline/blob/main/pc.v) | Program Counter register module with synchronous reset. |
+| [`incrementer.v`](https://github.com/ET-struct/MIPS_Pipeline/blob/main/incrementer.v) | Adder module to increment the PC. |
+| [`instrMem.v`](https://github.com/ET-struct/MIPS_Pipeline/blob/main/instrMem.v) | Instruction Memory module pre-loaded with dummy hex values. |
+| [`ifIdLatch.v`](https://github.com/ET-struct/MIPS_Pipeline/blob/main/ifIdLatch.v) | Pipeline latch passing PC and instruction on the clock edge. |
+| [`fetch_tb.v`](https://github.com/ET-struct/MIPS_Pipeline/blob/main/fetch_tb.v) | Verification testbench providing clock, reset, and EX_MEM inputs. |
 ### Implementation Notes
 - Reset Implementation: A synchronous reset (rst) signal was added to the sequential logic modules (pc.v and ifIdLatch.v) and driven by the testbench to clear initial "Unknown" (X) states during the first few nanoseconds of simulation.
 - Mux Wiring: The structural wiring in fetch.v connects the next_pc (incremented PC) and ex_mem_npc to the Mux inputs, and routes the output to the PC register.
@@ -40,7 +40,7 @@ Verification covers:
 - Branch/jump target fetch case (EX_MEM_PCSrc_tb = 1 routing EX_MEM_NPC_tb into the PC
 ### Testbench and Waveform
 ![Waveform](images/fetchWaveform.png)
-The testbench source is available in [`fetch_tb.v`](https://github.com/ET-struct/MIPS_Pipeline/blob/Instruction_Fetch/fetch_tb.v).
+The testbench source is available in [`fetch_tb.v`](https://github.com/ET-struct/MIPS_Pipeline/blob/main/fetch_tb.v).
 ### Results
 | Test Case | Expected Result | Observed Result | Status |
 |---|---|---|---|
@@ -82,12 +82,12 @@ Expected output:
 ├── images/
 │   ├── fetchWaveform.png
 ├── fetch.v
-├── pc.v
-├── instrMem.v
-├── incrementer.v
-├── mux.v
+├── fetch_tb.v
 ├── ifIdLatch.v
-└── fetch_tb.v
+├── incrementer.v
+├── instrMem.v
+├── mux.v
+└── pc.v
 ```
 ## Known Issues and Future Improvements
 - Incrementer Value: The incrementer currently adds 1 to the address (address + 32'd1). In a standard byte-addressed MIPS architecture, this should increment by 4 to fetch the next 32-bit word.
