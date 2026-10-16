@@ -16,7 +16,7 @@
 ### Timing or Behavioral Summary
 The Instruction Fetch stage uses the Program Counter (PC) to address the Instruction Memory and retrieve the next 32-bit instruction to be executed. Simultaneously, the current PC is incremented by the Adder/Incrementer. A Multiplexer (Mux) selects the next PC value—either the sequentially incremented PC or a target address provided by the EX/MEM stage (controlled by PCSrc). Finally, the IF/ID Latch captures both the fetched 32-bit instruction and the 32-bit incremented PC on the rising edge of the clock to pass them to the Instruction Decode stage.
 ![Timing Diagram](images/fetchWaveform.png)
-![Timing Diagram](images/IF_ID_instr_tb.png)
+![Timing Diagram](images/IF_ID_Instr_tb.png)
 ![Timing Diagram](images/IF_ID_instr_tb2.png)
 ![Timing Diagram](images/IF_ID_npc_tb1.png)
 ![Timing Diagram](images/IF_ID_npc_tb2.png)
@@ -44,7 +44,7 @@ Verification covers:
 - Branch/jump target fetch case (EX_MEM_PCSrc_tb = 1 routing EX_MEM_NPC_tb into the PC
 ### Testbench and Waveform
 ![Waveform](images/fetchWaveform.png)
-![Timing Diagram](images/IF_ID_instr_tb.png)
+![Timing Diagram](images/IF_ID_Instr_tb.png)
 ![Timing Diagram](images/IF_ID_instr_tb2.png)
 ![Timing Diagram](images/IF_ID_npc_tb1.png)
 ![Timing Diagram](images/IF_ID_npc_tb2.png)
