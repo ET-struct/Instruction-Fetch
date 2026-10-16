@@ -1,4 +1,4 @@
-# Coding Assignment 1 — Instruction Fetch
+# MIPS Instruction Fetch (IF) Stage
 
 ## Design Scope and Assumptions
 - **In scope:** This assignment implements the Instruction Fetch (IF) Stage of the MIPS Pipeline, which includes the Latch, Instruction Memory, Program Counter (PC), Multiplexer (Mux), and Incrementer/Adder.
