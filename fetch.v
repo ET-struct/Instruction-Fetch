@@ -36,7 +36,6 @@ incrementer in0(
 instrMem inMem0(
   .clk(clk),
   .rst(rst),
-  .rst(rst),
   .addr(pc_out),
   .data(instr_data)
 );
